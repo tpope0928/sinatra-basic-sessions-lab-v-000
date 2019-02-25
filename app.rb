@@ -4,20 +4,16 @@ class App < Sinatra::Base
 
   configure do
     enable :sessions
-    set :session_secret, "phish"
+    set :session_secret, 'flatiron'
   end
 
   get '/' do
     erb :index
   end
 
-  post '/checkout' do
+  post '/checkout' do 
     session[:item] = params[:item]
-
-    @sessions = session
-    @params = params
-
-    erb :item
+    @session = session
+    erb :checkout
   end
-
 end
