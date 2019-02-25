@@ -2,7 +2,7 @@ require_relative 'config/environment'
 
 class App < Sinatra::Base
 
-  configure do 
+  configure do
     enable :sessions
     set :session_secret, "phish"
   end
@@ -19,5 +19,5 @@ class App < Sinatra::Base
 
     erb :item
   end
-  
+
 end
